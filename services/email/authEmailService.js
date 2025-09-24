@@ -5,7 +5,7 @@ dotenv.config();
 
   const CLIENT_ID = process.env.CLIENT_ID_GMAIL;
   const CLIENT_SECRET = process.env.CLIENT_SECRET_GMAIL;
-  const REDIRECT_URI = 'http://localhost:3000/contact/auth-code'
+  const REDIRECT_URI = 'https://estudiocontableback.onrender.com/contact/auth-code'
 
   export const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
