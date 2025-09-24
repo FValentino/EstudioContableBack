@@ -4,6 +4,7 @@ import { authCode, authLink, sendContactEmail } from "../../controllers/emailCon
 const router = express.Router();
 
 router.post("/", sendContactEmail);
+router.post("/news", sendContactEmail);
 router.get('/auth-url', authLink);
 router.get('/auth-code', authCode)
 

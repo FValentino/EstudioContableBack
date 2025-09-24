@@ -9,7 +9,10 @@ const app = express();
 
 app.use(cors({
   origin: [
-],  
+    "http://localhost:5173",
+    "https://imgestion.com.ar",
+    "https://www.imgestion.com.ar"
+  ],
   methods: ["POST"],
   allowedHeaders: ["Content-Type"]
 }));

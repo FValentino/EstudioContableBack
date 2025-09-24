@@ -4,12 +4,12 @@ import transporter from "../../config/emailConfig.js"
 
 dotenv.config();
 
-export async function sendEmail(text) {
+export async function sendEmail(subject, text) {
   try {
     const info = await transporter.sendMail({
       from: `I&M <${process.env.USER_EMAIL}>`,
       to: process.env.USER_EMAIL,
-      subject: "Consulta desde la web",
+      subject: `[web] ${subject}`,
       text: text
     });
 
@@ -20,3 +20,4 @@ export async function sendEmail(text) {
     throw error;
   }
 }
+
