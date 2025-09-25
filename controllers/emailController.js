@@ -36,24 +36,4 @@ export async function sendNewsEmail(req, res) {
   }
 }
 
-export function authLink(req, res){
-  const authUrl =authLinkService();
-  res.send(`Abri este link para autorizar: <a href="${authUrl}" target="_blank">${authUrl}</a>`);;
-}
-
-export async function authCode(req, res){
-  const code = req.query.code;
-  if (!code) return res.send('No se recibió código');
-
-  try {
-    const { tokens } = await oAuth2Client.getToken(code);
-    oAuth2Client.setCredentials(tokens); // guardar los tokens en el cliente
-    console.log('Tokens obtenidos:', tokens);
-
-    res.send('Autorización completada! Revisa la consola para ver los tokens.');
-  } catch (err) {
-    console.error(err);
-    res.send('Error al intercambiar código por tokens');
-  }
-}
 
