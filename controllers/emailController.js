@@ -1,4 +1,3 @@
-import { authLinkService, oAuth2Client } from "../services/email/authEmailService.js";
 import { sendEmail } from "../services/email/sendEmailLanding.js";
 
 
