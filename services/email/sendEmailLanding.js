@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import transporter from "../../config/emailConfig.js"
+import resend from "../../config/resend.js";
 
 dotenv.config();
 
