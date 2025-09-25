@@ -10,7 +10,7 @@ export async function sendEmailResend(subject, text) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const data = await resend.emails.send({
-      from: `I&M <${process.env.USER_EMAIL}>`,
+      from: `I&M <${process.env.FROM_EMAIL}>`,
       to: [process.env.USER_EMAIL],
       subject: `[web] ${subject}`,
       html: text
