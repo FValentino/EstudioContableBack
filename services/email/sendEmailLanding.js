@@ -16,6 +16,11 @@ export async function sendEmailResend(subject, text) {
       html: text
     });
 
+    console.log("EMAIL FROM: ", process.env.FROM_EMAIL)
+    console.log("EMAIL TO: ", process.env.USER_EMAIL)
+    console.log("SUJETO: [web] ",subject)
+    console.log("HTML: ", text)
+
     console.log("Email enviado:", data);
     return data;
   } catch (error) {
