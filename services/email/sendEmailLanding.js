@@ -1,16 +1,17 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import transporter from "../../config/emailConfig.js"
-import resend from "../../config/resend.js";
+import { Resend } from 'resend';
 
 dotenv.config();
 
 export async function sendEmailResend(subject, text) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const data = await resend.emails.send({
       from: `I&M <${process.env.USER_EMAIL}>`,
-      to: process.env.USER_EMAIL,
+      to: [process.env.USER_EMAIL],
       subject: `[web] ${subject}`,
       html: text
     });

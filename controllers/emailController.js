@@ -1,10 +1,9 @@
 import { sendEmail, sendEmailResend } from "../services/email/sendEmailLanding.js";
 
-
 export async function sendContactEmail(req, res) {
   const { subject, html } = req.body;
 
-  if (!subject || html) {
+  if (!subject || !html) {
     return res.status(400).json({ success: false, message: "Todos los campos son obligatorios" });
   }
 
