@@ -1,5 +1,5 @@
 import express from "express";
-import { authCode, authLink, sendContactEmail } from "../../controllers/emailController.js";
+import { sendContactEmail } from "../../controllers/emailController.js";
 
 const router = express.Router();
 
